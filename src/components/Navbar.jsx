@@ -12,14 +12,16 @@ const Navbar = () => {
             </div>
             <div className="col-8 d-flex justify-content-evenly">
               <Link to="/" className="nav_a">Home</Link>
-              <Link to="/Business" className="nav_a">Business class flights</Link>
+              <Link to="/login" className="nav_a">Login</Link>
+              <Link to="/register" className="nav_a">Register</Link>
+              {/* <Link to="/Business" className="nav_a">Business class flights</Link>
               <Link to="/Offers" className="nav_a">Offers</Link>
               <Link to="/About" className="nav_a">About us</Link>
-              <Link to="/Contacts" className="nav_a">Contacts</Link>
+              <Link to="/Contacts" className="nav_a">Contacts</Link> */}
             </div>
-            <div className="col-1">
+            {/* <div className="col-1">
               <a href="" className="nav_lang">Eng</a>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

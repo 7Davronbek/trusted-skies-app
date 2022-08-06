@@ -5,6 +5,7 @@ import Skylux from '../components/Skylux'
 import Subscribe from '../components/Subscribe'
 import Towns from '../components/Towns'
 import Loader from '../components/Loader'
+import Places from '../components/Places'
 
 
 const Home = () => {
@@ -16,6 +17,7 @@ const Home = () => {
       <Reviews />
       <Subscribe />
       <Loader />
+      <Places />
 
     </>
   )

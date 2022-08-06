@@ -204,8 +204,6 @@ li {
 
 body {
 
-
-
     .Header {
         background-blend-mode: multiply;
         background-image: url(/image/header_1.png);
@@ -1007,7 +1005,6 @@ body {
             color: #00203D;
         }
     }
-
 
     .Bus_header {
         background-blend-mode: multiply;
@@ -2541,6 +2538,19 @@ body {
         }
 
 
+    }
+
+    .Login {
+        height: 60vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        h1 {
+            font-size: 40px;
+            text-align: center;
+            margin-bottom: 40px !important;
+        }
     }
 
 }

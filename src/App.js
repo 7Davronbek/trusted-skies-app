@@ -13,6 +13,7 @@ import About from "./pages/About";
 import Business from "./pages/Business";
 import Contacts from "./pages/Contacts";
 import Home from "./pages/Home";
+import Login from "./pages/Login";
 import Offers from "./pages/Offers";
 
 function App() {
@@ -22,6 +23,8 @@ function App() {
      <Navbar/>
     <Routes> 
 
+     <Route path="/" element={<Home/>} />
+     <Route path="/login" element={<Login/>} />
      <Route path="/" element={<Home/>} />
      <Route path="/Navbar" element={<Navbar/>}/>
      <Route path="/Header" element={<Header/>}/>
@@ -39,7 +42,7 @@ function App() {
 
     </Routes>
 
-    <Places/>
+    {/* <Places/> */}
     <Footer/>
 
 
