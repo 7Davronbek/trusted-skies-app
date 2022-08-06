@@ -3,21 +3,21 @@ import React from 'react'
 const Header = () => {
     return (
         <>
-            <div className="Header">
+            <div className="Header text-center">
                 <div className="container">
                     <div className="row">
                         <div className="col-12">
-                            <div className="header_h">
+                            <div className="header_h w-auto">
                                 Fly Business Class For Less
                             </div>
                         </div>
                         <div className="col-12">
-                            <div className="header_p">
+                            <div className="header_p mx-auto">
                                 Last month SkyLux Travel saved its clients over $995,700
                             </div>
                         </div>
                     </div>
-                    <div className="row justify-content-between">
+                    {/* <div className="row justify-content-between">
                         <div className="col-6">
                             <div className="row">
                                 <div className="col-4">
@@ -90,7 +90,7 @@ const Header = () => {
                             <div className="box_search">
                                 <img src="/img/header_search.png" alt="" />
                             </div>
-                    </div>
+                    </div> */}
 
                 </div>
             </div>

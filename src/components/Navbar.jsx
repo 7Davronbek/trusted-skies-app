@@ -12,8 +12,8 @@ const Navbar = () => {
             </div>
             <div className="col-8 d-flex justify-content-evenly">
               <Link to="/" className="nav_a">Home</Link>
-              <Link to="/login" className="nav_a">Login</Link>
               <Link to="/register" className="nav_a">Register</Link>
+              <Link to="/login" className="nav_a">Login</Link>
               {/* <Link to="/Business" className="nav_a">Business class flights</Link>
               <Link to="/Offers" className="nav_a">Offers</Link>
               <Link to="/About" className="nav_a">About us</Link>
