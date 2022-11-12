@@ -46,7 +46,7 @@ const Navbar = () => {
 
             </div>
             <div className="phone">
-                <a href=""><img src="/img/Phone.svg" alt="" className="phone_img" /></a>
+                {/* <a href=""><img src="/img/Phone.svg" alt="" className="phone_img" /></a> */}
             </div>
         </>
     )

@@ -318,6 +318,11 @@ body {
 
         }
 
+        .form-control {
+            box-shadow: none !important;
+            border: none;
+        }
+
         .class_option {
             text-align: center;
             margin-top: 50px;
@@ -1493,7 +1498,6 @@ body {
             color: #00203D;
         }
     }
-
 
     .Bus_header {
         background-blend-mode: multiply;
@@ -4002,6 +4006,4 @@ body {
             width: 100%;
         }
     }
-
-
 }

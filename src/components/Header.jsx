@@ -1,15 +1,11 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-
-
 const Header = () => {
 
     const [number, setNumber] = useState(0);
 
     return (
-
-
         <>
             <div className="Header">
                 <div className="container">
@@ -36,7 +32,7 @@ const Header = () => {
                                     <div className="h_box_1">
                                         <img className='me-2' src="/img/header_fly.png" alt="" />
                                         <div className="h_box_1_text">
-                                            <div className="h_box_1_text_h">From</div>
+                                            <div className="h_box_1_text_h"><input placeholder='From' type="text" className="form-control" /></div>
                                             {/* <div className="h_box_1_text_p">London</div> */}
                                         </div>
                                     </div>
@@ -44,7 +40,7 @@ const Header = () => {
                                     <div className="h_box_1">
                                         <img className='me-2' src="/img/header_fly.png" alt="" />
                                         <div className="h_box_1_text">
-                                            <div className="h_box_1_text_h">To</div>
+                                            <div className="h_box_1_text_h"><input placeholder='To' type="text" className="form-control" /></div>
                                             {/* <div className="h_box_1_text_p">London</div> */}
                                         </div>
                                     </div>
@@ -53,15 +49,16 @@ const Header = () => {
                                     <div className="h_box_2">
                                         <img className='me-2' src="/img/header_cal.png" alt="" />
                                         <div className="h_box_2_text">
-                                            <div className="h_box_2_text_h">OUTBOUND</div>
+                                            {/* <div className="h_box_2_text_h">OUTBOUND</div> */}
+                                            <input type="date" className='form-control' name="" id="" />
                                         </div>
                                     </div>
-                                    <div className="h_box_2">
+                                    {/* <div className="h_box_2">
                                         <img className='me-2' src="/img/header_cal.png" alt="" />
                                         <div className="h_box_2_text">
                                             <div className="h_box_2_text_h">INBOUND</div>
                                         </div>
-                                    </div>
+                                    </div> */}
                                 </div>
 
                                 <div className="h_box3">
