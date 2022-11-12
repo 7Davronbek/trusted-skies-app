@@ -13,11 +13,11 @@ const BusWhy = () => {
                     <div className="row">
                         <div className="col-12">
                             <div className="row">
-                                <div className="col-4">
+                                <div className="col-md-4">
                                     <div className="Buswhy_group">
                                         <div className="row">
                                             <div className="col-12">
-                                                <img src="/img/b_why_1.png" alt="" />
+                                                <img className='bus_why_img' src="/img/b_why_1.png" alt="" />
                                                 <div className="Buswhy_group_h">
                                                     Premium Service & Expert Travel Management
                                                 </div>
@@ -28,11 +28,11 @@ const BusWhy = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="col-4">
+                                <div className="col-md-4">
                                     <div className="Buswhy_group_2">
                                         <div className="row">
                                             <div className="col-12">
-                                                <img src="/img/b_why_2.png" alt="" />
+                                                <img className='bus_why_img' src="/img/b_why_2.png" alt="" />
                                                 <div className="Buswhy_group_h">
                                                     Going the Extra Mile & Providing Extra Care
                                                 </div>
@@ -43,11 +43,11 @@ const BusWhy = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="col-4">
+                                <div className="col-md-4">
                                     <div className="Buswhy_group_3">
                                         <div className="row">
                                             <div className="col-12">
-                                                <img src="/img/b_why_3.png" alt="" />
+                                                <img className='bus_why_img' src="/img/b_why_3.png" alt="" />
                                                 <div className="Buswhy_group_h">
                                                     Insider Deals at Unbeatable Prices
                                                 </div>
@@ -58,11 +58,11 @@ const BusWhy = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="col-4">
+                                <div className="col-md-4">
                                     <div className="Buswhy_group_4">
                                         <div className="row">
                                             <div className="col-12">
-                                                <img src="/img/b_why_4.png" alt="" />
+                                                <img className='bus_why_img' src="/img/b_why_4.png" alt="" />
                                                 <div className="Buswhy_group_h">
                                                     Real People Instead of Online Engines
                                                 </div>
@@ -73,11 +73,11 @@ const BusWhy = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="col-4">
+                                <div className="col-md-4">
                                     <div className="Buswhy_group_2">
                                         <div className="row">
                                             <div className="col-12">
-                                                <img src="/img/b_why_5.png" alt="" />
+                                                <img className='bus_why_img' src="/img/b_why_5.png" alt="" />
                                                 <div className="Buswhy_group_h">
                                                     Complex Itineraries & Multi-airline Flights
                                                 </div>
@@ -88,11 +88,11 @@ const BusWhy = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="col-4">
+                                <div className="col-md-4">
                                     <div className="Buswhy_group_5">
                                         <div className="row">
                                             <div className="col-12">
-                                                <img src="/img/b_why_6.png" alt="" />
+                                                <img className='bus_why_img' src="/img/b_why_6.png" alt="" />
                                                 <div className="Buswhy_group_h">
                                                     Corporate Travel Management
                                                 </div>

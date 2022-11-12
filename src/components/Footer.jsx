@@ -8,9 +8,9 @@ const Footer = () => {
                     <div className="row">
                         <div className="col-12 footer_box">
                             <a href="" className="footer_a">Home</a>
-                            <a href="" className="footer_a">Business class flights</a>
+                            <a href="" className="footer_a">Best deals</a>
                             <a href="" className="footer_a">Offers</a>
-                            <a href="" className="footer_a">About us</a>
+                            {/* <a href="" className="footer_a">About us</a> */}
                             <a href="" className="footer_a">Contacts</a>
                         </div>
                         <div className="col-12">
@@ -19,11 +19,11 @@ const Footer = () => {
                             </div>
                         </div>
                         <div className="col-12">
-                            <div className="footer_travel">© 2022 SkyLuxTravel. All rights reserved. CST # 2119950-40.</div>
+                            <div className="footer_travel">© 2022 Trusted Skies.       All rights reserved.      Privacy Policy.</div>
                         </div>
-                        <div className="col-12">
+                        {/* <div className="col-12">
                             <div className="footer_end">This site is protected by <a className='footer_koko' href="">kOkO Digital Agency</a> and the Google Privacy Policy and Terms of Service apply.</div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>

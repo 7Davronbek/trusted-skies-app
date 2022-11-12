@@ -65,7 +65,7 @@ const OffBook = () => {
                     <div className="row">
                         <div className="col-12">
                             <div className="offbook_name_2">
-                                Why Book With SkyLuxTravel?
+                                Why Book With Trusted skies?
                             </div>
                         </div>
                     </div>
@@ -86,7 +86,7 @@ const OffBook = () => {
                                 >
                                     <SwiperSlide>
                                         <div className="row">
-                                            <div className="col-4 off_slider_box">
+                                            <div className="col-lg-4 off_slider_box">
                                                 <div className="off_slider_p pt-3">
                                                     After-hours support until you return. Free 24/7 assistance to provide immediate help and answer your questions.
 
@@ -95,13 +95,13 @@ const OffBook = () => {
                                                     Corporate travel management. At SkyLux we are committed to taking the hassle out of frequent business travel. Special business trip arrangements including exclusive business travel pricing.
                                                 </div>
                                             </div>
-                                            <div className="col-8">
-                                                <img className="p-3 w-100" src="/img/off_swiper_1.png" alt="" />
+                                            <div className="col-lg-8 off_book_img">
+                                                <img className="h-100 p-lg-3 p-0 w-100" src="/img/off_swiper_1.png" alt="" />
                                             </div>
                                         </div>
                                     </SwiperSlide>
                                     <SwiperSlide>  <div className="row">
-                                        <div className="col-4 off_slider_box">
+                                        <div className="col-lg-4 off_slider_box">
                                             <div className="off_slider_p pt-3">
                                                 After-hours support until you return. Free 24/7 assistance to provide immediate help and answer your questions.
 
@@ -110,13 +110,13 @@ const OffBook = () => {
                                                 Corporate travel management. At SkyLux we are committed to taking the hassle out of frequent business travel. Special business trip arrangements including exclusive business travel pricing.
                                             </div>
                                         </div>
-                                        <div className="col-8">
-                                            <img className="p-3 w-100" src="/img/off_swiper_1.png" alt="" />
+                                        <div className="col-lg-8 off_book_img">
+                                            <img className="h-100 p-lg-3 p-0 w-100" src="/img/off_swiper_1.png" alt="" />
                                         </div>
                                     </div>
                                     </SwiperSlide>
                                     <SwiperSlide>  <div className="row">
-                                        <div className="col-4 off_slider_box">
+                                        <div className="col-lg-4 off_slider_box">
                                             <div className="off_slider_p pt-3">
                                                 After-hours support until you return. Free 24/7 assistance to provide immediate help and answer your questions.
 
@@ -125,8 +125,8 @@ const OffBook = () => {
                                                 Corporate travel management. At SkyLux we are committed to taking the hassle out of frequent business travel. Special business trip arrangements including exclusive business travel pricing.
                                             </div>
                                         </div>
-                                        <div className="col-8">
-                                            <img className="p-3 w-100" src="/img/off_swiper_1.png" alt="" />
+                                        <div className="col-lg-8 off_book_img">
+                                            <img className="h-100 p-lg-3 p-0 w-100" src="/img/off_swiper_1.png" alt="" />
                                         </div>
                                     </div>
                                     </SwiperSlide>

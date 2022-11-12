@@ -7,18 +7,17 @@ const Bus_header = () => {
     <div className="b_header">
                     <div className="container">
                         <div className="row">
-                            <div className="col-6">
-                                <div className="b_header_h">Cheap Business Class Flights & Tickets</div>
+                            <div className="col-12">
+                                <div className="b_header_h">Cheap Best deals & Tickets</div>
                                 <div className="b_header_p">Discounted business class flights - 2022 from USA to Europe, Asia, PH, Africa, India etc. Luxury cheap first class tickets with very low first-class flight fares. Airlines cheapest business class flights with top carrier business class offers, promos and sale from July 2022 onwards.</div>
                             </div>
-                            <div className="col-6">
+                            {/* <div className="col-lg-6">
                                 <div className="b_header_box">
                                     <div className="row">
                                         <div className="col-12">
                                             <input placeholder='Name' type="text" className='b_box_1' />
                                         </div>
                                         <div className="pt-4 col-12 d-flex align-items-center justify-content-center">
-                                            {/* <img src="/img/box_img.png" alt="" />  */}
                                             <input placeholder='+998' type="text" className='b_box_1' />
                                         </div>
 
@@ -58,7 +57,7 @@ const Bus_header = () => {
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
 
                     </div>

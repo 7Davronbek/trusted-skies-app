@@ -13,43 +13,38 @@ import About from "./pages/About";
 import Business from "./pages/Business";
 import Contacts from "./pages/Contacts";
 import Home from "./pages/Home";
-import Login from "./pages/Login";
 import Offers from "./pages/Offers";
-import Register from "./pages/Register";
+import Result from "./pages/Result";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
-   <>
-   <Router>
-     <Navbar/>
-    <Routes> 
+    <>
+      <Router>
+        <Navbar />
 
-     <Route path="/" element={<Home/>} />
-     <Route path="/login" element={<Login/>} />
-     <Route path="/register" element={<Register/>} />
-     <Route path="/Navbar" element={<Navbar/>}/>
-     <Route path="/Header" element={<Header/>}/>
-     <Route path="/Towns" element={<Towns/>}/>
-     <Route path="/Skylux" element={<Skylux/>}/>
-     <Route path="/Reviews" element={<Reviews/>}/>
-     <Route path="/Subscribe" element={<Subscribe/>}/>
-     <Route path="/Places" element={<Places/>}/>
-     <Route path="/Footer" element={<Footer/>}/>
-     <Route path="/Loader" element={<Loader/>}/>
-     <Route path="/Business" element={<Business/>}/>
-     <Route path="/Offers" element={<Offers/>}/>
-     <Route path="/About" element={<About/>}/>
-     <Route path="/Contacts" element={<Contacts/>}/>
-
-    </Routes>
-
-    {/* <Places/> */}
-    <Footer/>
-
-
-   </Router>
-   
-   </>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/Navbar" element={<Navbar />} />
+          <Route path="/Header" element={<Header />} />
+          <Route path="/Towns" element={<Towns />} />
+          <Route path="/Skylux" element={<Skylux />} />
+          <Route path="/Reviews" element={<Reviews />} />
+          <Route path="/Subscribe" element={<Subscribe />} />
+          <Route path="/Places" element={<Places />} />
+          <Route path="/Footer" element={<Footer />} />
+          <Route path="/Loader" element={<Loader />} />
+          <Route path="/Business" element={<Business />} />
+          <Route path="/Offers" element={<Offers />} />
+          <Route path="/About" element={<About />} />
+          <Route path="/Contacts" element={<Contacts />} />
+          <Route path="/Result" element={<Result />} />
+        </Routes>
+        {/* <Places /> */}
+        <Footer />
+        <ScrollToTop />
+      </Router>
+    </>
   );
 }
 

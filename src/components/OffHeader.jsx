@@ -39,11 +39,11 @@ const OffHeader = () => {
               <div className="col-lg-6">
                 <SwiperSlide>
                   <div className="OffHeader_box_h" data-swiper-parallax="-300">
-                    SkyLuxTravel -
+                    Trusted Skies -
                     Comfort You Can Afford
                   </div>
                   <div className="OffHeader_box_p" data-swiper-parallax="-100">
-                    Fly Business & First Class for Less Together with Our Experts: Book with Us & Save 50-77%* Off!
+                    Request and get best Economy(Coach) quotes in under 15 minutes
                   </div>
                   <div className="OffHeader_box">
                   </div>
@@ -52,11 +52,11 @@ const OffHeader = () => {
               <div className="col-lg-6">
                 <SwiperSlide>
                   <div className="OffHeader_box_h" data-swiper-parallax="-300">
-                    SkyLuxTravel -
+                    Trusted Skies -
                     Comfort You Can Afford
                   </div>
                   <div className="OffHeader_box_p" data-swiper-parallax="-100">
-                    Fly Business & First Class for Less Together with Our Experts: Book with Us & Save 50-77%* Off!
+                    Request and get best  Premium Economy quotes in under 15 minutes
                   </div>
                   <div className="OffHeader_box">
                   </div>
@@ -65,11 +65,22 @@ const OffHeader = () => {
               <div className="col-lg-6">
                 <SwiperSlide>
                   <div className="OffHeader_box_h" data-swiper-parallax="-300">
-                    SkyLuxTravel -
+                    Trusted Skies -
                     Comfort You Can Afford
                   </div>
                   <div className="OffHeader_box_p" data-swiper-parallax="-100">
-                    Fly Business & First Class for Less Together with Our Experts: Book with Us & Save 50-77%* Off!
+                    Request and get best First Class quotes in under 15 minutes
+                  </div>
+                  <div className="OffHeader_box">
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="OffHeader_box_h" data-swiper-parallax="-300">
+                    Trusted Skies -
+                    Comfort You Can Afford
+                  </div>
+                  <div className="OffHeader_box_p" data-swiper-parallax="-100">
+                    Request and get best  Business Class quotes in under 15 minutes
                   </div>
                   <div className="OffHeader_box">
                   </div>

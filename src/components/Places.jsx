@@ -20,7 +20,7 @@ const Places = (props) => {
                     Top Countries
                   </AccordionHeader>
                   <AccordionBody accordionId="1">
-                    <a href='#!' className="acar_text">
+                    <a href='' className="acar_text">
                       United States Business Class Flights
                     </a>
                     <br />

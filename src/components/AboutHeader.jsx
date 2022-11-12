@@ -14,7 +14,7 @@ const AboutHeader = () => {
     return (
         <>
             <div className="AboutHeader">
-                <div className="container">
+                {/* <div className="container">
                     <div className="row">
                         <div className="col-12">
                             <div className="aboutheader_h">
@@ -23,7 +23,7 @@ const AboutHeader = () => {
                         </div>
                     </div>
                 </div>
-                <img className='about_header_img d-flex m-auto' src="/img/about_head.png" alt="" />
+                <img className='about_header_img d-flex m-auto' src="/img/about_head.png" alt="" /> */}
 
                 <div className="container">
                     <div className="row">

@@ -31,18 +31,20 @@ const BusMessage = () => {
 
 
                                 breakpoints={{
-                                    640: {
-                                        slidesPerView: 2,
+                                    767: {
+                                        slidesPerView: 1,
                                         spaceBetween: 20,
                                     },
-                                    768: {
-                                        slidesPerView: 3,
-                                        spaceBetween: 40,
+                               
+                                    1100: {
+                                        slidesPerView: 2,
+                                        spaceBetween: 15,
                                     },
-                                    1024: {
+                                    1324: {
                                         slidesPerView: 3,
                                         spaceBetween: 15,
                                     },
+                                    
                                 }}
                                 modules={[Pagination, Navigation, Autoplay]}
                                 className="mySwiper"
@@ -55,7 +57,7 @@ const BusMessage = () => {
                                                     <div className="BusMessage_h">Mr. PETER ANDRYSIAK</div>
                                                     <div className="BusMessage_date">2 days ago</div>
                                                 </div>
-                                                <img src="/img/BusMessage_stars.png" alt="" />
+                                                <img className="bus_mes_box" src="/img/BusMessage_stars.png" alt="" />
                                                 <div className="BusMessage_h_2">
                                                     Pablo Devera continues to…
                                                 </div>
@@ -72,7 +74,7 @@ const BusMessage = () => {
                                                     <div className="BusMessage_h">Ms. HAMIDAH GHAZALLI</div>
                                                     <div className="BusMessage_date">8 hours ago</div>
                                                 </div>
-                                                <img src="/img/BusMessage_stars.png" alt="" />
+                                                <img className="bus_mes_box" src="/img/BusMessage_stars.png" alt="" />
                                                 <div className="BusMessage_h_2">
                                                     I'm very satisfied w/the service
                                                 </div>
@@ -89,7 +91,7 @@ const BusMessage = () => {
                                                     <div className="BusMessage_h">Ms. SUEZIE GORE</div>
                                                     <div className="BusMessage_date">3 days ago</div>
                                                 </div>
-                                                <img src="/img/BusMessage_stars.png" alt="" />
+                                                <img className="bus_mes_box" src="/img/BusMessage_stars.png" alt="" />
                                                 <div className="BusMessage_h_2">
                                                     Mr Frank Hart
                                                 </div>

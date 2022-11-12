@@ -6,7 +6,7 @@ const BusLines = () => {
             <div className="BusLines">
                 <div className="container">
                     <div className="row">
-                        <div className="col-4">
+                        <div className="col-lg-4">
                             <div className="Buslines_box">
                                 <div className="Buslines_box_h">
                                     Other Popular Airlines
@@ -46,7 +46,7 @@ const BusLines = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-4">
+                        <div className="col-lg-4">
                             <div className="Buslines_box">
                                 <div className="Buslines_box_h">
                                     Business Class Flights to Domestic Cities
@@ -97,7 +97,7 @@ const BusLines = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-4">
+                        <div className="col-lg-4">
                             <div className="Buslines_box">
                                 <div className="Buslines_box_h">
                                     Business Class Flights to International Cities
