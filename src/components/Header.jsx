@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom'
 const Header = () => {
 
     const [number, setNumber] = useState(0);
+    const [passanger, setPassanger] = useState(false);
     // const [from, setFrom] = useState('')
 
     // const getFrom = async () => {
@@ -80,9 +81,9 @@ const Header = () => {
                                 </div>
 
                                 <div className="h_box3">
-                                    <div className="h_box3_main">
+                                    <div className="h_box3_main passanger">
                                         <img className='me-2' src="/img/header_con.png" alt="" />
-                                        <button className="h_box3_main_text btn d-flex align-items-center passanger">
+                                        <button onClick={() => setPassanger(!passanger)} className={`h_box3_main_text btn d-flex align-items-center`}>
 
                                             <div className="">
                                                 <h5>1 passanger</h5>
@@ -91,16 +92,30 @@ const Header = () => {
 
                                             <i className='ms-3'><img src="img/down.svg" alt="" /></i>
 
-                                            <div className="wrap">
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, ea.
-                                            </div>
-
                                             {/* <div className="button_wrapper">
                                                 <button onClick={() => setNumber(number > 1 ? number - 1 : 1)}>-</button>
                                                 <h1>{number}</h1>
                                                 <button onClick={() => setNumber(number + 1)}>+</button>
                                             </div> */}
                                         </button>
+
+                                        <div className={`wrap ${passanger ? 'active' : ''}`}>
+                                            <div className="wrapContent">
+                                                <div className='me-2'>
+                                                    <h5>Old</h5>
+                                                    <h6>more 12 old</h6>
+                                                </div>
+                                                <div className="button_wrapper">
+                                                    <div onClick={() => setNumber(number > 1 ? number - 1 : 0)}>-</div>
+                                                    <h1>{number}</h1>
+                                                    <div onClick={() => setNumber(number + 1)}>+</div>
+                                                </div>
+                                            </div>
+
+                                            <input type="checkbox" name="" id="" />
+
+                                        </div>
+
                                     </div>
                                 </div>
                                 <div className="h_search">
