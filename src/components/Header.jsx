@@ -1,9 +1,27 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+// import axios from 'axios'
+// import { API_PATH } from '../tools/constants'
+// import { useEffect } from 'react'
 
 const Header = () => {
 
     const [number, setNumber] = useState(0);
+    // const [from, setFrom] = useState('')
+
+    // const getFrom = async () => {
+    //     await axios.get(API_PATH + '/search/?city=' + from)
+    //         .then((res) => {
+    //             console.log(res);
+    //         })
+    //         .catch((err) => {
+    //             console.log(err);
+    //         })
+    // }
+
+    // useEffect(() => {
+    //     getFrom()
+    // }, [])
 
     return (
         <>
@@ -47,10 +65,10 @@ const Header = () => {
                                 </div>
                                 <div className="h_box2">
                                     <div className="h_box_2">
-                                        <img className='me-2' src="/img/header_cal.png" alt="" />
+                                        {/* <img className='me-2' src="/img/header_cal.png" alt="" /> */}
                                         <div className="h_box_2_text">
                                             {/* <div className="h_box_2_text_h">OUTBOUND</div> */}
-                                            <input type="date" className='form-control' name="" id="" />
+                                            <input type="date" placeholder="dd-mm-yyyy" format="yyyy-mm-dd" min="1997-01-01" max="2030-12-31" className='form-control ' name="" id="" />
                                         </div>
                                     </div>
                                     {/* <div className="h_box_2">
@@ -64,14 +82,25 @@ const Header = () => {
                                 <div className="h_box3">
                                     <div className="h_box3_main">
                                         <img className='me-2' src="/img/header_con.png" alt="" />
-                                        <div className="h_box3_main_text">
+                                        <button className="h_box3_main_text btn d-flex align-items-center passanger">
 
-                                            <div className="button_wrapper">
+                                            <div className="">
+                                                <h5>1 passanger</h5>
+                                                <h6>First class</h6>
+                                            </div>
+
+                                            <i className='ms-3'><img src="img/down.svg" alt="" /></i>
+
+                                            <div className="wrap">
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, ea.
+                                            </div>
+
+                                            {/* <div className="button_wrapper">
                                                 <button onClick={() => setNumber(number > 1 ? number - 1 : 1)}>-</button>
                                                 <h1>{number}</h1>
                                                 <button onClick={() => setNumber(number + 1)}>+</button>
-                                            </div>
-                                        </div>
+                                            </div> */}
+                                        </button>
                                     </div>
                                 </div>
                                 <div className="h_search">

@@ -270,8 +270,6 @@ li {
 
 body {
 
-
-
     .Header {
         background-blend-mode: multiply;
         background-image: url(/image/header_1.png);
@@ -292,8 +290,37 @@ body {
             padding-bottom: 180px;
         }
 
+        .passanger {
+            position: relative;
 
+            .wrap {
+                position: absolute;
+                background: red;
+                width: 200px;
+                height: 200px;
+                right: 0;
+                top: 0;
+                opacity: 0;
+                transition: all .3s ease-in-out;
+                visibility: hidden;
+            }
 
+            .btn {
+    
+                &:focus-within {
+
+                    i {
+                        transform: rotate(90deg);
+                    } 
+                    
+                    .wrap {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+            }
+        }
+        
         .container {
             max-width: 1200px;
         }
@@ -381,7 +408,7 @@ body {
             }
 
             .h_box_search {
-                margin: 0 60px;
+                margin: 0 20px;
 
                 @media(max-width:576px) {
                     margin: 0 40px;
