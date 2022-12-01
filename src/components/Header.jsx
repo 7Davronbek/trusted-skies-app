@@ -1,28 +1,47 @@
-import React, { useState } from 'react'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-// import axios from 'axios'
-// import { API_PATH } from '../tools/constants'
-// import { useEffect } from 'react'
+import { API_PATH } from '../tools/constants'
 
 const Header = () => {
 
     const [number, setNumber] = useState(0);
     const [passanger, setPassanger] = useState(false);
-    // const [from, setFrom] = useState('')
+    const [from, setFrom] = useState('')
+    const [to, setTo] = useState('')
 
-    // const getFrom = async () => {
-    //     await axios.get(API_PATH + '/search/?city=' + from)
-    //         .then((res) => {
-    //             console.log(res);
-    //         })
-    //         .catch((err) => {
-    //             console.log(err);
-    //         })
-    // }
+    const [allFrom, setAllFrom] = useState([])
+    const [allTo, setAllTo] = useState([])
 
-    // useEffect(() => {
-    //     getFrom()
-    // }, [])
+    const [iata, setIata] = useState('')
+    const [fromBool, setFromBool] = useState(false)
+    const [toIata, setToIata] = useState('')
+    const [toBool, setToBool] = useState(false)
+
+    const getFrom = async () => {
+        await axios.get(API_PATH + '/airport/search/?city=' + from)
+            .then((res) => {
+                setAllFrom(res.data)
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+    }
+
+    const getTo = async () => {
+        await axios.get(API_PATH + '/airport/search/?city=' + to)
+            .then((res) => {
+                setAllTo(res.data)
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+    }
+
+    useEffect(() => {
+        getFrom()
+        getTo()
+    }, [from, to])
 
     return (
         <>
@@ -51,16 +70,32 @@ const Header = () => {
                                     <div className="h_box_1">
                                         <img className='me-2' src="/img/header_fly.png" alt="" />
                                         <div className="h_box_1_text">
-                                            <div className="h_box_1_text_h"><input placeholder='From' type="text" className="form-control" /></div>
-                                            {/* <div className="h_box_1_text_p">London</div> */}
+                                            <div className="h_box_1_text_h wrap">
+                                                <input placeholder='From' onChange={e => { setFrom(e.target.value); setFromBool(true) }} value={from} type="text" className="form-control" />
+                                                <div className="miniContent">{iata}</div>
+                                                <div className={`info ${fromBool && from.length > 0 ? 'active' : ''}`}>
+                                                    {from.length > 0 && allFrom && allFrom.map((item, index) => (
+                                                        <h6 onClick={(e, i) => { setFrom(item.name_en); setIata(item.iata); setFromBool(false) }} key={index}>{item.name_en}, <span>{item.parent_name_en}</span> <i>{item.iata}</i></h6>
+                                                    ))}
+                                                    {allFrom.length === 0 && <h5>Loading...</h5>}
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <img className='h_box_search' src="/img/go_back.png" alt="" />
                                     <div className="h_box_1">
                                         <img className='me-2' src="/img/header_fly.png" alt="" />
                                         <div className="h_box_1_text">
-                                            <div className="h_box_1_text_h"><input placeholder='To' type="text" className="form-control" /></div>
-                                            {/* <div className="h_box_1_text_p">London</div> */}
+                                            <div className="h_box_1_text_h wrap">
+                                                <input placeholder='From' onChange={e => { setTo(e.target.value); setToBool(true) }} value={to} type="text" className="form-control" />
+                                                <div className="miniContent">{toIata}</div>
+                                                <div className={`info ${toBool && from.length > 0 ? 'active' : ''}`}>
+                                                    {from.length > 0 && allTo && allTo.map((item, index) => (
+                                                        <h6 onClick={(e, i) => { setTo(item.name_en); setToIata(item.iata); setToBool(false) }} key={index}>{item.name_en}, <span>{item.parent_name_en}</span> <i>{item.iata}</i></h6>
+                                                    ))}
+                                                    {allTo.length === 0 && <h5>Loading...</h5>}
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
