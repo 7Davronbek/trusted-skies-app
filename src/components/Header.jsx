@@ -18,6 +18,8 @@ const Header = () => {
     const [toIata, setToIata] = useState('')
     const [toBool, setToBool] = useState(false)
 
+    const [click, setClick] = useState(false)
+
     const getFrom = async () => {
         await axios.get(API_PATH + '/airport/search/?city=' + from)
             .then((res) => {
@@ -71,11 +73,11 @@ const Header = () => {
                                         <img className='me-2' src="/img/header_fly.png" alt="" />
                                         <div className="h_box_1_text">
                                             <div className="h_box_1_text_h wrap">
-                                                <input placeholder='From' onChange={e => { setFrom(e.target.value); setFromBool(true) }} value={from} type="text" className="form-control" />
+                                                <input autoFocus placeholder='From' onChange={e => { setFrom(e.target.value); setFromBool(true) }} value={from} type="text" className="form-control" />
                                                 <div className="miniContent">{iata}</div>
                                                 <div className={`info ${fromBool && from.length > 0 ? 'active' : ''}`}>
                                                     {from.length > 0 && allFrom && allFrom.map((item, index) => (
-                                                        <h6 onClick={(e, i) => { setFrom(item.name_en); setIata(item.iata); setFromBool(false) }} key={index}>{item.name_en}, <span>{item.parent_name_en}</span> <i>{item.iata}</i></h6>
+                                                        <h6 onClick={(e, i) => { setFrom(item.name_en); setIata(item.iata); setFromBool(false); setClick(true) }} key={index}>{item.name_en}, <span>{item.parent_name_en}</span> <i>{item.iata}</i></h6>
                                                     ))}
                                                     {allFrom.length === 0 && <h5>Loading...</h5>}
                                                 </div>
