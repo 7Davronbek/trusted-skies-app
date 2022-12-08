@@ -2,7 +2,7 @@ import React from "react";
 import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import Loader from "./components/Loader";
+// import Loader from "./components/Loader";
 import Navbar from "./components/Navbar";
 import Places from "./components/Places";
 import Reviews from "./components/Reviews";
@@ -33,7 +33,7 @@ function App() {
                     <Route path="/Subscribe" element={<Subscribe />} />
                     <Route path="/Places" element={<Places />} />
                     <Route path="/Footer" element={<Footer />} />
-                    <Route path="/Loader" element={<Loader />} />
+                    {/* <Route path="/Loader" element={<Loader />} /> */}
                     <Route path="/Business" element={<Business />} />
                     <Route path="/Offers" element={<Offers />} />
                     <Route path="/About" element={<About />} />

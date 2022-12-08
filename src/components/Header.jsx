@@ -5,7 +5,12 @@ import { API_PATH } from '../tools/constants'
 
 const Header = () => {
 
-    const [number, setNumber] = useState(0);
+    const [old, setOld] = useState(1);
+    const [adult, setAdult] = useState(0);
+    const [young, setYoung] = useState(0);
+
+    const [econom, setEconom] = useState('Economy class')
+
     const [passanger, setPassanger] = useState(false);
     const [from, setFrom] = useState('')
     const [to, setTo] = useState('')
@@ -19,6 +24,19 @@ const Header = () => {
     const [toBool, setToBool] = useState(false)
 
     const [click, setClick] = useState(false)
+
+    const [changeFrom, setChangeFrom] = useState('')
+    const [changeIata, setChangeIata] = useState('')
+
+    const changeFromTo = async () => {
+        setChangeFrom(from)
+        setFrom(to)
+        setTo(from)
+
+        setChangeIata(iata)
+        setIata(toIata)
+        setIata(iata)
+    }
 
     const getFrom = async () => {
         await axios.get(API_PATH + '/airport/search/?city=' + from)
@@ -56,11 +74,11 @@ const Header = () => {
                             </div>
                         </div>
                         <div className="col-12 d-flex justify-content-center">
-                            <select className='class_option' name="" id="">
-                                <option value="">Economy class</option>
-                                <option value="">Premium Economy class</option>
-                                <option value="">Business class</option>
-                                <option value="">First class</option>
+                            <select onChange={e => setEconom(e.target.value)} className='class_option' >
+                                <option value="Economy class">Economy class</option>
+                                <option value="Premium Economy class">Premium Economy class</option>
+                                <option value="Business class">Business class</option>
+                                <option value="First class">First class</option>
                             </select>
                         </div>
                     </div>
@@ -84,15 +102,17 @@ const Header = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <img className='h_box_search' src="/img/go_back.png" alt="" />
+
+                                    <img onClick={changeFromTo} className='h_box_search' src="/img/go_back.png" alt="" />
+                                    
                                     <div className="h_box_1">
                                         <img className='me-2' src="/img/header_fly.png" alt="" />
                                         <div className="h_box_1_text">
                                             <div className="h_box_1_text_h wrap">
-                                                <input placeholder='From' onChange={e => { setTo(e.target.value); setToBool(true) }} value={to} type="text" className="form-control" />
+                                                <input placeholder='To' onChange={e => { setTo(e.target.value); setToBool(true) }} value={to} type="text" className="form-control" />
                                                 <div className="miniContent">{toIata}</div>
-                                                <div className={`info ${toBool && from.length > 0 ? 'active' : ''}`}>
-                                                    {from.length > 0 && allTo && allTo.map((item, index) => (
+                                                <div className={`info ${toBool && to.length > 0 ? 'active' : ''}`}>
+                                                    {to.length > 0 && allTo && allTo.map((item, index) => (
                                                         <h6 onClick={(e, i) => { setTo(item.name_en); setToIata(item.iata); setToBool(false) }} key={index}>{item.name_en}, <span>{item.parent_name_en}</span> <i>{item.iata}</i></h6>
                                                     ))}
                                                     {allTo.length === 0 && <h5>Loading...</h5>}
@@ -123,8 +143,8 @@ const Header = () => {
                                         <button onClick={() => setPassanger(!passanger)} className={`h_box3_main_text btn d-flex align-items-center`}>
 
                                             <div className="">
-                                                <h5>1 passanger</h5>
-                                                <h6>First class</h6>
+                                                <h5>{old + adult + young} passanger{old + adult + young > 1 && 's'}</h5>
+                                                <h6>{econom}</h6>
                                             </div>
 
                                             <i className='ms-3'><img src="img/down.svg" alt="" /></i>
@@ -137,19 +157,43 @@ const Header = () => {
                                         </button>
 
                                         <div className={`wrap ${passanger ? 'active' : ''}`}>
-                                            <div className="wrapContent">
+                                            <div className="wrapContent mb-3">
                                                 <div className='me-2'>
                                                     <h5>Old</h5>
                                                     <h6>more 12 old</h6>
                                                 </div>
                                                 <div className="button_wrapper">
-                                                    <div onClick={() => setNumber(number > 1 ? number - 1 : 0)}>-</div>
-                                                    <h1>{number}</h1>
-                                                    <div onClick={() => setNumber(number + 1)}>+</div>
+                                                    <button disabled={old <= 1} className='btn' onClick={() => setOld(old > 1 ? old - 1 : 0)}>-</button>
+                                                    <h1>{old}</h1>
+                                                    <button className='btn' onClick={() => setOld(old + 1)}>+</button>
                                                 </div>
                                             </div>
 
-                                            <input type="checkbox" name="" id="" />
+                                            <div className="wrapContent mb-3">
+                                                <div className='me-2'>
+                                                    <h5>Adult</h5>
+                                                    <h6>from 2 to 12 years</h6>
+                                                </div>
+                                                <div className="button_wrapper">
+                                                    <button disabled={adult <= 0} className='btn' onClick={() => setAdult(adult > 1 ? adult - 1 : 0)}>-</button>
+                                                    <h1>{adult}</h1>
+                                                    <button className='btn' onClick={() => setAdult(adult + 1)}>+</button>
+                                                </div>
+                                            </div>
+
+                                            <div className="wrapContent mb-3">
+                                                <div className='me-2'>
+                                                    <h5>Young</h5>
+                                                    <h6>less 2 years</h6>
+                                                </div>
+                                                <div className="button_wrapper">
+                                                    <button disabled={young <= 0} className='btn' onClick={() => setYoung(young > 1 ? young - 1 : 0)}>-</button>
+                                                    <h1>{young}</h1>
+                                                    <button className='btn' onClick={() => setYoung(young + 1)}>+</button>
+                                                </div>
+                                            </div>
+
+                                            {/* <input type="checkbox" name="" id="" /> */}
 
                                         </div>
 
@@ -161,12 +205,12 @@ const Header = () => {
                             </div>
                         </div>
 
-                        <div className="col-12">
+                        {/* <div className="col-12">
                             <div className="way_type">
                                 <div className="way_type_h">One way</div>
                                 <div className="way_type_h">Round trip</div>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>

@@ -1,4 +1,5 @@
 import React from 'react'
+import InputMask from "react-input-mask";
 
 const ResultHeader = () => {
   return (
@@ -86,7 +87,17 @@ const ResultHeader = () => {
                   <input className='main_2_input' type="text" placeholder='Name' />
                 </div>
                 <div className="col-12">
-                  <input className='main_2_input' type="text" placeholder='+998' />
+                  
+                  <InputMask
+                    mask="+\9\9\8\ (99) 999-99-99"
+                    alwaysShowMask={true}
+                    maskChar="_"
+                    className='main_2_input'
+                    required
+                    placeholder='Telefon raqamingizni kiriting...'
+                  />
+
+                  {/* <input className='main_2_input' type="text" placeholder='+998' /> */}
                 </div>
                 <div className="col-12">
                   <input className='main_2_input' type="text" placeholder='Email' />
