@@ -1,9 +1,10 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
+// import { Link } from 'react-router-dom'
 import { API_PATH } from '../tools/constants'
 
-const Header = () => {
+const Header = ({ setSearch }) => {
 
     const [old, setOld] = useState(1);
     const [adult, setAdult] = useState(0);
@@ -40,17 +41,26 @@ const Header = () => {
         setToIata(iata)
     }
 
-    // [1 chaqalo, 2 adult, 3 old]
+    const navigate = useNavigate()
 
-    const ticket =async () => {
+    const ticket = async () => {
         await axios.post(API_PATH + `/airport/ticket/`, {
             from: iata,
             to: toIata,
             date,
             // cabin_class: econom,
-            passengers: [13, 1, 3],
-            adult: 0,
+            adult: old,
+            young: adult,
+            baby: young
         })
+            .then((res) => {
+                setSearch(res.data)
+                localStorage.setItem('SEARCH', JSON.stringify(res.data))
+                navigate('/Result', { replace: true })
+            })
+            .catch((err) => {
+                console.log(err);
+            })
     }
 
     useEffect(() => {
@@ -64,7 +74,11 @@ const Header = () => {
                     console.log(err);
                 })
         }
-    
+        getFrom()
+    }, [from])
+
+    useEffect(() => {
+
         const getTo = async () => {
             await axios.get(API_PATH + '/airport/search/?city=' + to)
                 .then((res) => {
@@ -74,10 +88,9 @@ const Header = () => {
                     console.log(err);
                 })
         }
-        
-        getFrom()
+
         getTo()
-    }, [from, setFrom, setTo, to])
+    }, [to])
 
     return (
         <>
@@ -120,7 +133,7 @@ const Header = () => {
                                     </div>
 
                                     <img onClick={changeFromTo} className='h_box_search' src="/img/go_back.png" alt="" />
-                                    
+
                                     <div className="h_box_1">
                                         <img className='me-2' src="/img/header_fly.png" alt="" />
                                         <div className="h_box_1_text">

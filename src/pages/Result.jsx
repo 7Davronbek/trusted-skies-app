@@ -3,10 +3,10 @@ import ResultHeader from '../components/ResultHeader'
 import ResultMain from '../components/ResultMain'
 import Subscribe from '../components/Subscribe'
 
-const Result = () => {
+const Result = ({search}) => {
     return (
         <>
-            <ResultHeader />
+            <ResultHeader search={search} />
             <ResultMain />
             <Subscribe />
         </>

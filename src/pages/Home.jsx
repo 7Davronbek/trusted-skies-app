@@ -8,7 +8,7 @@ import Loader from '../components/Loader'
 import Book1 from '../components/Book1'
 // import Clients from '../components/Clients'
 
-const Home = () => {
+const Home = ({ setSearch }) => {
 
     const [isLoader, setIsLoader] = useState(true);
 
@@ -25,7 +25,7 @@ const Home = () => {
                 <Loader />
             </> :
                 <>
-                    <Header />
+                    <Header setSearch={setSearch} />
                     {/* <Towns /> */}
                     <Skylux />
                     {/* <Reviews /> */}
