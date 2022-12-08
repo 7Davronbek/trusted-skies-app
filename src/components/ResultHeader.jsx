@@ -2,7 +2,7 @@ import React from 'react'
 import InputMask from "react-input-mask";
 
 const ResultHeader = ({ search }) => {
-    console.log(JSON.stringify(localStorage.getItem('SEARCH')));
+    console.log(search);
     return (
         <>
             <div className="ResultHeader">
@@ -44,6 +44,21 @@ const ResultHeader = ({ search }) => {
                                 </div>
                             </div>
                             <div className="res_1_box_3">
+                                {search && search.list.map((item, index) => (
+                                    <div key={index} className="res_1_box_3_reys">
+                                        <div>
+                                            <h4>{item.name}</h4>
+                                        </div>
+                                        <div className="res_1_box_3_text">
+                                            <div className="res_1_box_3_text_h">
+                                                $ {item.amount}
+                                            </div>
+                                            <div className="res_1_box_3_text_p">
+                                                {item.class_type}
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
                                 <div className="res_1_box_3_reys">
                                     <img src="/img/res_reys_1.png" alt="" />
                                     <div className="res_1_box_3_text">
