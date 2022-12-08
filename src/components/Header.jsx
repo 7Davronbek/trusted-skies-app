@@ -10,6 +10,8 @@ const Header = () => {
     const [young, setYoung] = useState(0);
 
     const [econom, setEconom] = useState('Economy class')
+    const [date, setDate] = useState('')
+
 
     const [passanger, setPassanger] = useState(false);
     const [from, setFrom] = useState('')
@@ -35,33 +37,47 @@ const Header = () => {
 
         setChangeIata(iata)
         setIata(toIata)
-        setIata(iata)
+        setToIata(iata)
     }
 
-    const getFrom = async () => {
-        await axios.get(API_PATH + '/airport/search/?city=' + from)
-            .then((res) => {
-                setAllFrom(res.data)
-            })
-            .catch((err) => {
-                console.log(err);
-            })
-    }
+    // [1 chaqalo, 2 adult, 3 old]
 
-    const getTo = async () => {
-        await axios.get(API_PATH + '/airport/search/?city=' + to)
-            .then((res) => {
-                setAllTo(res.data)
-            })
-            .catch((err) => {
-                console.log(err);
-            })
+    const ticket =async () => {
+        await axios.post(API_PATH + `/airport/ticket/`, {
+            from: iata,
+            to: toIata,
+            date,
+            // cabin_class: econom,
+            passengers: [13, 1, 3],
+            adult: 0,
+        })
     }
 
     useEffect(() => {
+
+        const getFrom = async () => {
+            await axios.get(API_PATH + '/airport/search/?city=' + from)
+                .then((res) => {
+                    setAllFrom(res.data)
+                })
+                .catch((err) => {
+                    console.log(err);
+                })
+        }
+    
+        const getTo = async () => {
+            await axios.get(API_PATH + '/airport/search/?city=' + to)
+                .then((res) => {
+                    setAllTo(res.data)
+                })
+                .catch((err) => {
+                    console.log(err);
+                })
+        }
+        
         getFrom()
         getTo()
-    }, [from, to])
+    }, [from, setFrom, setTo, to])
 
     return (
         <>
@@ -126,7 +142,7 @@ const Header = () => {
                                         {/* <img className='me-2' src="/img/header_cal.png" alt="" /> */}
                                         <div className="h_box_2_text">
                                             {/* <div className="h_box_2_text_h">OUTBOUND</div> */}
-                                            <input type="date" placeholder="dd-mm-yyyy" format="yyyy-mm-dd" min="1997-01-01" max="2030-12-31" className='form-control ' name="" id="" />
+                                            <input onChange={e => setDate(e.target.value)} type="date" placeholder="dd-mm-yyyy" format="yyyy-mm-dd" min="1997-01-01" max="2030-12-31" className='form-control ' name="" id="" />
                                         </div>
                                     </div>
                                     {/* <div className="h_box_2">
@@ -199,8 +215,8 @@ const Header = () => {
 
                                     </div>
                                 </div>
-                                <div className="h_search">
-                                    <Link to="/Result"><img className='' src="/img/h_search.png" alt="" /></Link>
+                                <div onClick={ticket} className="h_search">
+                                    <img className='' src="/img/h_search.png" alt="" />
                                 </div>
                             </div>
                         </div>
