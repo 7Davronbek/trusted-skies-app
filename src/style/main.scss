@@ -3764,6 +3764,12 @@ body {
         background-attachment: fixed;
         padding: 100px 0;
 
+        h5 {
+            color: #fff;
+            // text-align: end;
+            margin-top: 20px;
+        }
+
         .container {
             max-width: 1350px;
         }

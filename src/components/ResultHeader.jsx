@@ -8,13 +8,13 @@ const ResultHeader = ({ search }) => {
             <div className="ResultHeader">
                 <div className="container">
                     <div className="row">
-                        <div className="col-lg-7 ResHead_main_1">
-                            <div className="res_1_p">Save extra $300 withYour Discount ID SKY950-4949</div>
+                        <div className="col-lg-10 mx-auto ResHead_main_1 pt-5">
+                            {/* <div className="res_1_p">Save extra $300 withYour Discount ID SKY950-4949</div> */}
                             <div className="res_1_box">
                                 <div className="row justify-content-center flex-column flex-md-row align-content-center">
                                     <div className="col-md-3 d-flex align-items-center justify-content-center">
                                         <div className="res_1_name">
-                                            Tashkent
+                                            {localStorage.getItem('FROM').length > 0 ? localStorage.getItem('FROM') : 'Loading...'}
                                         </div>
                                     </div>
                                     <div className="col-md-4 d-flex align-items-center justify-content-center">
@@ -24,11 +24,12 @@ const ResultHeader = ({ search }) => {
                                     </div>
                                     <div className="col-md-3 d-flex align-items-center justify-content-center">
                                         <div className="res_1_name">
-                                            Moscow
+                                            {localStorage.getItem('TO').length > 0 ? localStorage.getItem('TO') : 'Loading...'}
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
                             <div className="res_1_box_2">
                                 <div className="res_1_box_2_1">
                                     <div className="res_1_box_2_1_h">Deal of the Day</div>
@@ -36,18 +37,22 @@ const ResultHeader = ({ search }) => {
                                 </div>
                                 <div className="res_1_box_2_2">
                                     <div className="res_1_box_2_2_h">
-                                        $ 2464
+                                        $ {search.list[0]?.amount ? search.list[0].amount : 0}
                                     </div>
-                                    <div className="res_1_box_2_2_p">
-                                        Business class
+                                    <div className="res_1_box_2_2_p mt-2">
+                                        {search.list[0]?.class_type ? search.list[0].class_type : 0}
                                     </div>
                                 </div>
                             </div>
+                            <h5>Amount of tickets: {search ? search.count : 0}</h5>
                             <div className="res_1_box_3">
                                 {search && search.list.map((item, index) => (
                                     <div key={index} className="res_1_box_3_reys">
                                         <div>
                                             <h4>{item.name}</h4>
+                                        </div>
+                                        <div>
+                                            <h4>From here to there</h4>
                                         </div>
                                         <div className="res_1_box_3_text">
                                             <div className="res_1_box_3_text_h">

@@ -56,6 +56,8 @@ const Header = ({ setSearch }) => {
             .then((res) => {
                 setSearch(res.data)
                 localStorage.setItem('SEARCH', JSON.stringify(res.data))
+                localStorage.setItem("FROM", from)
+                localStorage.setItem("TO", to)
                 navigate('/Result', { replace: true })
             })
             .catch((err) => {

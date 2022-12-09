@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
-import Header from "./components/Header";
+// import Header from "./components/Header";
 // import Loader from "./components/Loader";
 import Navbar from "./components/Navbar";
 import Places from "./components/Places";
