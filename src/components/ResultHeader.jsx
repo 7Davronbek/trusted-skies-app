@@ -49,33 +49,33 @@ const ResultHeader = ({ search }) => {
                                 {search && search.list.map((item, index) => (
                                     <div key={index} className="res_1_box_3_reys">
                                         <div>
-                                            <h4>{item.name}</h4>
+                                            <h4>{item.airport}</h4>
                                         </div>
                                         <div className='wrap'>
                                             <div>
-                                                <h6>{localStorage.getItem('FROM').length > 0 ? localStorage.getItem('FROM') : 'Loading...'}</h6>
+
+                                                <h6>{localStorage.getItem('FROM')?.length > 0 ? localStorage.getItem('FROM') : 'Loading...'}</h6>
+                                                <p>{item.depart && item.depart.slice(11, -3)}</p>
                                                 <i>{item.depart && item.depart.slice(8, 10) + `.` + item.depart.slice(5, 7) + `.` + item.depart.slice(0, 4)}</i>
-                                                {/* <p>
-                                                    {item.iata}
-                                                </p> */}
+
                                             </div>
                                             <div className="middle">
                                                 <div className="line"></div>
 
-                                                <p>{item.iata}</p>
+                                                <p className='howerWrap'>{item.iata}</p>
                                                 {item.airport_2 && item.airport_2.map((item2, index2) => (
                                                     <div key={index2}>
                                                         <p>{item2.iatacode}</p>
                                                     </div>
                                                 ))}
-                                                <p>{item.iata_2}</p>
+                                                {item.length > 1 ? '' : <p>{item.iata_2}</p>}
                                             </div>
                                             <div>
-                                                <h6>{localStorage.getItem('TO').length > 0 ? localStorage.getItem('TO') : 'Loading...'}</h6>
+
+                                                <h6>{localStorage.getItem('TO')?.length > 0 ? localStorage.getItem('TO') : 'Loading...'}</h6>
+                                                <p>{item.arriving_at && item.arriving_at.slice(11, -3)}</p>
                                                 <i>{item.arriving_at && item.arriving_at.slice(8, 10) + `.` + item.arriving_at.slice(5, 7) + `.` + item.arriving_at.slice(0, 4)}</i>
-                                                {/* <p>
-                                                    {item.iata_2}
-                                                </p> */}
+
                                             </div>
                                         </div>
                                         <div className="res_1_box_3_text">
@@ -88,39 +88,6 @@ const ResultHeader = ({ search }) => {
                                         </div>
                                     </div>
                                 ))}
-                                <div className="res_1_box_3_reys">
-                                    <img src="/img/res_reys_1.png" alt="" />
-                                    <div className="res_1_box_3_text">
-                                        <div className="res_1_box_3_text_h">
-                                            $ 2565
-                                        </div>
-                                        <div className="res_1_box_3_text_p">
-                                            Buisiness class, r/t, total
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="res_1_box_3_reys">
-                                    <img src="/img/res_reys_2.png" alt="" />
-                                    <div className="res_1_box_3_text">
-                                        <div className="res_1_box_3_text_h">
-                                            $ 2847
-                                        </div>
-                                        <div className="res_1_box_3_text_p">
-                                            Buisiness class, r/t, total
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="res_1_box_3_reys">
-                                    <img src="/img/res_reys_3.png" alt="" />
-                                    <div className="res_1_box_3_text">
-                                        <div className="res_1_box_3_text_h">
-                                            $ 3222
-                                        </div>
-                                        <div className="res_1_box_3_text_p">
-                                            Buisiness class, r/t, total
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                         <div className="col-lg-5 ResHead_main_2">
@@ -142,7 +109,6 @@ const ResultHeader = ({ search }) => {
                                         placeholder='Telefon raqamingizni kiriting...'
                                     />
 
-                                    {/* <input className='main_2_input' type="text" placeholder='+998' /> */}
                                 </div>
                                 <div className="col-12">
                                     <input className='main_2_input' type="text" placeholder='Email' />
