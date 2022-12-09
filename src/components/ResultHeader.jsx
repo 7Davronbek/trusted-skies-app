@@ -51,8 +51,32 @@ const ResultHeader = ({ search }) => {
                                         <div>
                                             <h4>{item.name}</h4>
                                         </div>
-                                        <div>
-                                            <h4>From here to there</h4>
+                                        <div className='wrap'>
+                                            <div>
+                                                <h6>{localStorage.getItem('FROM').length > 0 ? localStorage.getItem('FROM') : 'Loading...'}</h6>
+                                                <i>{item.depart && item.depart.slice(8, 10) + `.` + item.depart.slice(5, 7) + `.` + item.depart.slice(0, 4)}</i>
+                                                {/* <p>
+                                                    {item.iata}
+                                                </p> */}
+                                            </div>
+                                            <div className="middle">
+                                                <div className="line"></div>
+
+                                                <p>{item.iata}</p>
+                                                {item.airport_2 && item.airport_2.map((item2, index2) => (
+                                                    <div key={index2}>
+                                                        <p>{item2.iatacode}</p>
+                                                    </div>
+                                                ))}
+                                                <p>{item.iata_2}</p>
+                                            </div>
+                                            <div>
+                                                <h6>{localStorage.getItem('TO').length > 0 ? localStorage.getItem('TO') : 'Loading...'}</h6>
+                                                <i>{item.arriving_at && item.arriving_at.slice(8, 10) + `.` + item.arriving_at.slice(5, 7) + `.` + item.arriving_at.slice(0, 4)}</i>
+                                                {/* <p>
+                                                    {item.iata_2}
+                                                </p> */}
+                                            </div>
                                         </div>
                                         <div className="res_1_box_3_text">
                                             <div className="res_1_box_3_text_h">

@@ -3770,6 +3770,33 @@ body {
             margin-top: 20px;
         }
 
+        .middle {
+            display: flex;
+            align-items: center;
+            width: 50%;
+            justify-content: space-between;
+            position: relative;
+            padding-top: 20px;
+
+            .line {
+                position: absolute;
+                width: 100%;
+                top: 0;
+                left: 0;
+                height: 2px;
+                border-radius: 1px;
+                background-color: silver;
+            }
+        }
+
+        .wrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 60%;
+            margin: auto;
+        }
+
         .container {
             max-width: 1350px;
         }
