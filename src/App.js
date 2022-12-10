@@ -18,7 +18,7 @@ import Result from "./pages/Result";
 import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
-    const [search, setSearch] = useState(JSON.parse( localStorage.getItem('SEARCH')) || [])
+    const [search, setSearch] = useState(JSON.parse(localStorage.getItem('SEARCH')) || [])
     return (
         <>
             <Router>

@@ -3981,6 +3981,25 @@ body {
                     align-items: center;
                     padding: 10px 20px;
                     border-bottom: 1px solid #00203D;
+
+                    .btn {
+                        background: #00203d;
+                        border-radius: 10px;
+                        display: flex;
+                        margin-top: 15px;
+                        padding: 10px 20px;
+                        color: #fff;
+                        font-size: 16px;
+                        font-weight: 600;
+                        transition: all .3s ease-in-out;
+                        border: 1px solid #00203d;
+                        box-shadow: none !important;
+
+                        &:hover {
+                            background-color: #fff;
+                            color: #00203d;
+                        }
+                    }
                 }
 
                 .res_1_box_3_text {

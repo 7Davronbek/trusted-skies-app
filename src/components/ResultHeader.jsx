@@ -1,8 +1,23 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import InputMask from "react-input-mask";
+import { useNavigate } from 'react-router-dom';
 
 const ResultHeader = ({ search }) => {
     console.log(search);
+    const navigate = useNavigate()
+
+    const checkStorage = () => {
+        const storedData = localStorage.getItem("FROM") + localStorage.getItem('TO');
+        if (!storedData) console.log('Local storage is empty');
+        console.log(storedData);
+    }
+
+    useEffect(() => {
+        // if (localStorage.getItem('FROM') === '' && localStorage.getItem('TO') === '') return navigate('/', { replace: true })
+        checkStorage()
+        console.log('qweqwe');
+    }, [])
+
     return (
         <>
             <div className="ResultHeader">
@@ -14,7 +29,7 @@ const ResultHeader = ({ search }) => {
                                 <div className="row justify-content-center flex-column flex-md-row align-content-center">
                                     <div className="col-md-3 d-flex align-items-center justify-content-center">
                                         <div className="res_1_name">
-                                            {localStorage.getItem('FROM').length > 0 ? localStorage.getItem('FROM') : 'Loading...'}
+                                            {localStorage.getItem('FROM')?.length > 0 ? localStorage.getItem('FROM') : 'Loading...'}
                                         </div>
                                     </div>
                                     <div className="col-md-4 d-flex align-items-center justify-content-center">
@@ -24,7 +39,7 @@ const ResultHeader = ({ search }) => {
                                     </div>
                                     <div className="col-md-3 d-flex align-items-center justify-content-center">
                                         <div className="res_1_name">
-                                            {localStorage.getItem('TO').length > 0 ? localStorage.getItem('TO') : 'Loading...'}
+                                            {localStorage.getItem('TO')?.length > 0 ? localStorage.getItem('TO') : 'Loading...'}
                                         </div>
                                     </div>
                                 </div>
@@ -50,6 +65,7 @@ const ResultHeader = ({ search }) => {
                                     <div key={index} className="res_1_box_3_reys">
                                         <div>
                                             <h4>{item.airport}</h4>
+                                            <button className="btn">Order Now</button>
                                         </div>
                                         <div className='wrap'>
                                             <div>
@@ -64,7 +80,7 @@ const ResultHeader = ({ search }) => {
 
                                                 <p className='howerWrap'>
                                                     {item.iata}
-                                                    <div className="inner">Departure from "{item.airport}" airport at {item.depart && item.depart.slice(11, -3)} local time</div>
+                                                    <div className="inner">Departure from "{item.name}" airport at {item.depart && item.depart.slice(11, -3)} local time</div>
                                                 </p>
                                                 {item.airport_2 && item.airport_2.slice(0, -1).map((item2, index2) => (
                                                     <div className='howerWrap depart' key={index2}>
@@ -74,7 +90,7 @@ const ResultHeader = ({ search }) => {
                                                 ))}
                                                 <p className='howerWrap'>
                                                     {item.iata_2}
-                                                    <div className="inner">Departure from "{item.airport}" airport at {item.depart && item.depart.slice(11, -3)} local time</div>
+                                                    <div className="inner">Arrival in "{item.airport}" airport at {item.arriving_at && item.arriving_at.slice(11, -3)} local time</div>
                                                 </p>
                                             </div>
                                             <div>
