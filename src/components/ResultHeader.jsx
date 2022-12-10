@@ -51,7 +51,7 @@ const ResultHeader = ({ search }) => {
                                 {search && search.list.map((item, index) => (
                                     <div key={index} className="res_1_box_3_reys">
                                         <div>
-                                            <h4>{item.airport}</h4>
+                                            <h4>{item.name}</h4>
                                             <button className="btn">Order Now</button>
                                         </div>
                                         <div className='wrap'>

@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@duffel/components": "^2.4.16",
     "@fortawesome/fontawesome-svg-core": "^6.1.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@testing-library/jest-dom": "^5.16.4",
