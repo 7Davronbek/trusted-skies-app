@@ -3,7 +3,8 @@ import ResultHeader from '../components/ResultHeader'
 import ResultMain from '../components/ResultMain'
 import Subscribe from '../components/Subscribe'
 
-const Result = ({search}) => {
+const Result = ({ search }) => {
+
     return (
         <>
             <ResultHeader search={search} />

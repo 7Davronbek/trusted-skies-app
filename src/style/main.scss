@@ -3778,6 +3778,15 @@ body {
             position: relative;
             padding-top: 20px;
 
+            .duration {
+                position: absolute;
+                top: -30px;
+                left: 50%;
+                transform: translateX(-50%);
+                font-weight: 600;
+                color: #6e6e6e;
+            }
+
             .line {
                 position: absolute;
                 width: 100%;

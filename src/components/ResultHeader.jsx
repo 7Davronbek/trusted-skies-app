@@ -4,19 +4,6 @@ import { useNavigate } from 'react-router-dom';
 
 const ResultHeader = ({ search }) => {
     console.log(search);
-    const navigate = useNavigate()
-
-    const checkStorage = () => {
-        const storedData = localStorage.getItem("FROM") + localStorage.getItem('TO');
-        if (!storedData) console.log('Local storage is empty');
-        console.log(storedData);
-    }
-
-    useEffect(() => {
-        // if (localStorage.getItem('FROM') === '' && localStorage.getItem('TO') === '') return navigate('/', { replace: true })
-        checkStorage()
-        console.log('qweqwe');
-    }, [])
 
     return (
         <>
@@ -76,11 +63,12 @@ const ResultHeader = ({ search }) => {
 
                                             </div>
                                             <div className="middle">
+                                                <span className="duration">{item.duration}</span>
                                                 <div className="line"></div>
 
                                                 <p className='howerWrap'>
                                                     {item.iata}
-                                                    <div className="inner">Departure from "{item.name}" airport at {item.depart && item.depart.slice(11, -3)} local time</div>
+                                                    <div className="inner">Departure from "{item.ketish_airport}" airport at {item.depart && item.depart.slice(11, -3)} local time</div>
                                                 </p>
                                                 {item.airport_2 && item.airport_2.slice(0, -1).map((item2, index2) => (
                                                     <div className='howerWrap depart' key={index2}>
