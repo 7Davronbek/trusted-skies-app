@@ -3789,6 +3789,59 @@ body {
             }
         }
 
+        .howerWrap {
+            position: relative;
+            cursor: pointer;
+
+            .inner {
+                position: absolute;
+                background: #06192a;
+                font-size: 14px;
+                width: 200px;
+                overflow-y: auto;
+                top: -105px;
+                height: 100px;
+                left: -88px;
+                border-radius: 10px;
+                padding: 10px;
+                text-align: center;
+                color: #fff;
+                opacity: 0;
+                visibility: hidden;
+                transform: translate(0, 10px);
+                transition: all .2s ease-in-out;
+                scroll-behavior: smooth;
+                overflow-x: hidden;
+
+                &.depart {
+                    height: 120px;
+                    top: -120px;
+                }
+            }
+            
+            ::-webkit-scrollbar {
+                width: 2px;
+            }
+        
+            ::-webkit-scrollbar-track {
+                background: transparent;
+            }
+        
+            ::-webkit-scrollbar-thumb {
+                background: transparent;
+                border-radius: 5px;
+            }
+
+            &:hover {
+
+                .inner {
+                    opacity: 1;
+                    transform: translate(0);
+                    visibility: visible;
+                }
+            }
+        }
+
         .wrap {
             display: flex;
             align-items: center;

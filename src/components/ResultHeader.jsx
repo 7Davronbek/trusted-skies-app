@@ -62,13 +62,20 @@ const ResultHeader = ({ search }) => {
                                             <div className="middle">
                                                 <div className="line"></div>
 
-                                                <p className='howerWrap'>{item.iata}</p>
-                                                {item.airport_2 && item.airport_2.map((item2, index2) => (
-                                                    <div key={index2}>
+                                                <p className='howerWrap'>
+                                                    {item.iata}
+                                                    <div className="inner">Departure from "{item.airport}" airport at {item.depart && item.depart.slice(11, -3)} local time</div>
+                                                </p>
+                                                {item.airport_2 && item.airport_2.slice(0, -1).map((item2, index2) => (
+                                                    <div className='howerWrap depart' key={index2}>
                                                         <p>{item2.iatacode}</p>
+                                                        <div className="inner">Transplant in "{item2.destionation_name}" airport from {item2.arriving_at && item2.arriving_at.slice(11, -3)} to {item2.depart_at && item2.depart_at.slice(11, -3)} local time</div>
                                                     </div>
                                                 ))}
-                                                {item.length > 1 ? '' : <p>{item.iata_2}</p>}
+                                                <p className='howerWrap'>
+                                                    {item.iata_2}
+                                                    <div className="inner">Departure from "{item.airport}" airport at {item.depart && item.depart.slice(11, -3)} local time</div>
+                                                </p>
                                             </div>
                                             <div>
 
