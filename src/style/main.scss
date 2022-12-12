@@ -3827,15 +3827,15 @@ body {
                     top: -120px;
                 }
             }
-            
+
             ::-webkit-scrollbar {
                 width: 2px;
             }
-        
+
             ::-webkit-scrollbar-track {
                 background: transparent;
             }
-        
+
             ::-webkit-scrollbar-thumb {
                 background: transparent;
                 border-radius: 5px;
@@ -3988,8 +3988,8 @@ body {
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
-                    padding: 10px 20px;
                     border-bottom: 1px solid #00203D;
+                    padding: 26px 20px;
 
                     .btn {
                         background: #00203d;
@@ -4230,6 +4230,40 @@ body {
 
         .client_img {
             width: 100%;
+        }
+    }
+
+    .ResultModal {
+        opacity: 0;
+        visibility: hidden;
+        transition: all .4s ease-in-out;
+
+        .cards {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            width: 60%;
+            padding: 30px;
+            border-radius: 20px !important;
+            z-index: 222222;
+        }
+
+        .shadow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #000000ce;
+            z-index: 22222;
+            // backdrop-filter: blur(10px);
+        }
+
+        &.active {
+            opacity: 1;
+            visibility: visible;
         }
     }
 }

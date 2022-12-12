@@ -1,9 +1,11 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import InputMask from "react-input-mask";
 import { useNavigate } from 'react-router-dom';
 
 const ResultHeader = ({ search }) => {
     console.log(search);
+
+    const [modal, setModal] = useState(false)
 
     return (
         <>
@@ -52,7 +54,7 @@ const ResultHeader = ({ search }) => {
                                     <div key={index} className="res_1_box_3_reys">
                                         <div>
                                             <h4>{item.name}</h4>
-                                            <button className="btn">Order Now</button>
+                                            <button onClick={() => setModal(true)} className="btn">Order Now</button>
                                         </div>
                                         <div className='wrap'>
                                             <div>
@@ -159,6 +161,21 @@ const ResultHeader = ({ search }) => {
                                 </div>
                             </div>
 
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div className={`ResultModal ${modal ? 'active' : ''}`}>
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-8 mx-auto">
+                            <div className="cards">
+                                <h3>Lorem, ipsum dolor.</h3>
+                                <h6>10h 40m</h6>
+                            </div>
+
+                            <div onClick={() => setModal(false)} className="shadow"></div>
                         </div>
                     </div>
                 </div>
