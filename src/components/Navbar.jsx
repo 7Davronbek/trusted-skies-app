@@ -32,7 +32,7 @@ const Navbar = () => {
                             <Link to="/Offers" className={`nav_a ${location.pathname === '/Offers' ? 'active' : ''}`}>Offers</Link>
                             {/* <Link to="/About" className={`nav_a ${location.pathname === '/About' ? 'active' : ''}`}>About us</Link> */}
                             <Link to="/Contacts" className={`nav_a ${location.pathname === '/Contacts' ? 'active' : ''}`}>Contacts</Link>
-                            <Link to="/" className="nav_lang">Eng</Link>
+                            {/* <Link to="/" className="nav_lang">Eng</Link> */}
                         </div>
                         <div onClick={() => setBurger(!burger)} className={`burger pr-4 ml-auto d-flex d-lg-none ${burger ? 'burgered' : ''}`}>
                             <div className="burger_up "></div>

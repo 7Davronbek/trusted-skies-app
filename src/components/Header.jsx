@@ -137,7 +137,7 @@ const Header = ({ setSearch }) => {
                                     <img onClick={changeFromTo} className='h_box_search' src="/img/go_back.png" alt="" />
 
                                     <div className="h_box_1">
-                                        <img className='me-2' src="/img/header_fly.png" alt="" />
+                                        <img className='me-2' src="/img/to.png" alt="" />
                                         <div className="h_box_1_text">
                                             <div className="h_box_1_text_h wrap">
                                                 <input placeholder='To' onChange={e => { setTo(e.target.value); setToBool(true) }} value={to} type="text" className="form-control" />

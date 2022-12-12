@@ -26,7 +26,7 @@ function App() {
 
                 <Routes>
                     <Route path="/" element={<Home setSearch={setSearch} />} />
-                    <Route path="/Navbar" element={<Navbar />} />
+                    {/* <Route path="/Navbar" element={<Navbar />} /> */}
                     {/* <Route path="/Header" element={<Header setSearch={setSearch} />} /> */}
                     <Route path="/Towns" element={<Towns />} />
                     <Route path="/Skylux" element={<Skylux />} />
