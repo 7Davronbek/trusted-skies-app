@@ -7,6 +7,10 @@ const ResultHeader = ({ search }) => {
 
     const [modal, setModal] = useState(false)
 
+    const [modalArr, setModalArr] = useState({})
+
+    console.log(modalArr);
+
     return (
         <>
             <div className="ResultHeader">
@@ -54,7 +58,7 @@ const ResultHeader = ({ search }) => {
                                     <div key={index} className="res_1_box_3_reys">
                                         <div>
                                             <h4>{item.name}</h4>
-                                            <button onClick={() => setModal(true)} className="btn">Order Now</button>
+                                            <button onClick={() => { setModal(true); setModalArr(item) }} className="btn">Order Now</button>
                                         </div>
                                         <div className='wrap'>
                                             <div>
@@ -171,11 +175,42 @@ const ResultHeader = ({ search }) => {
                     <div className="row">
                         <div className="col-lg-8 mx-auto">
                             <div className="cards">
-                                <h3>Lorem, ipsum dolor.</h3>
-                                <h6>10h 40m</h6>
+                                <h3>{modalArr.airport}</h3>
+                                <h6>{modalArr.duration}</h6>
+                                <div className='wrap'>
+                                    <div>
+                                        <h6>{localStorage.getItem('FROM')?.length > 0 ? localStorage.getItem('FROM') : 'Loading...'}</h6>
+                                        <p>{modalArr.depart && modalArr.depart.slice(11, -3)}</p>
+                                        <i>{modalArr.depart && modalArr.depart.slice(8, 10) + `.` + modalArr.depart.slice(5, 7) + `.` + modalArr.depart.slice(0, 4)}</i>
+
+                                    </div>
+                                    <div className="middle">
+                                        <span className="duration">{modalArr.duration}</span>
+                                        <div className="line"></div>
+
+                                        <p className='howerWrap'>
+                                            {modalArr.iata}
+                                        </p>
+                                        {modalArr.airport_2 && modalArr.airport_2.slice(0, -1).map((modalArr2, index2) => (
+                                            <div className='howerWrap depart' key={index2}>
+                                                <p>{modalArr2.iatacode}</p>
+                                            </div>
+                                        ))}
+                                        <p className='howerWrap'>
+                                            {modalArr.iata_2}
+                                        </p>
+                                    </div>
+                                    <div>
+
+                                        <h6>{localStorage.getItem('TO')?.length > 0 ? localStorage.getItem('TO') : 'Loading...'}</h6>
+                                        <p>{modalArr.arriving_at && modalArr.arriving_at.slice(11, -3)}</p>
+                                        <i>{modalArr.arriving_at && modalArr.arriving_at.slice(8, 10) + `.` + modalArr.arriving_at.slice(5, 7) + `.` + modalArr.arriving_at.slice(0, 4)}</i>
+
+                                    </div>
+                                </div>
                             </div>
 
-                            <div onClick={() => setModal(false)} className="shadow"></div>
+                            <div onClick={() => { setModal(false); setModalArr({}) }} className="shadow"></div>
                         </div>
                     </div>
                 </div>

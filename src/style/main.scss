@@ -4250,6 +4250,14 @@ body {
             z-index: 222222;
         }
 
+        .wrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 60%;
+            margin: auto;
+        }
+
         .shadow {
             position: fixed;
             top: 0;
