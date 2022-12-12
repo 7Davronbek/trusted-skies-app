@@ -3778,6 +3778,26 @@ body {
             position: relative;
             padding-top: 20px;
 
+            .fromImg {
+                position: absolute;
+                top: -33px;
+                left: -3px;
+
+                img {
+                    width: 20px;
+                }
+            }
+
+            .toImg {
+                position: absolute;
+                top: -33px;
+                right: -3px;
+
+                img {
+                    width: 20px;
+                }
+            }
+
             .duration {
                 position: absolute;
                 top: -30px;
@@ -4255,6 +4275,26 @@ body {
             justify-content: space-between;
             position: relative;
             padding-top: 20px;
+
+            .fromImg {
+                position: absolute;
+                top: -33px;
+                left: -3px;
+
+                img {
+                    width: 15px;
+                }
+            }
+
+            .toImg {
+                position: absolute;
+                top: -33px;
+                right: -3px;
+
+                img {
+                    width: 15px;
+                }
+            }
 
             .duration {
                 position: absolute;

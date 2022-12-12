@@ -21,7 +21,7 @@ const ResultHeader = ({ search }) => {
             setSuccess(true)
             setTimeout(() => {
                 setSuccess(false)
-                navigate('/', {replace: true})
+                navigate('/', { replace: true })
             }, 2000)
         }, 200)
     }
@@ -93,6 +93,8 @@ const ResultHeader = ({ search }) => {
                                             <div className="middle">
                                                 <span className="duration">{item.duration}</span>
                                                 <div className="line"></div>
+                                                <div className="fromImg"><img src="img/header_fly.png" alt="" /></div>
+                                                <div className="toImg"><img src="img/to.png" alt="" /></div>
 
                                                 <p className='howerWrap'>
                                                     {item.iata}
@@ -213,6 +215,8 @@ const ResultHeader = ({ search }) => {
                                     <div className="middle">
                                         <span className="duration">{modalArr.duration}</span>
                                         <div className="line"></div>
+                                        <div className="fromImg"><img src="img/header_fly.png" alt="" /></div>
+                                        <div className="toImg"><img src="img/to.png" alt="" /></div>
 
                                         <p className='howerWrap'>
                                             {modalArr.iata}
@@ -288,7 +292,7 @@ const ResultHeader = ({ search }) => {
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-8 mx-auto">
-                            
+
                             <div className="cards">
                                 <div className="icon"><img src="img/success.png" alt="" /></div>
                                 <h1>Success</h1>
