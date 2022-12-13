@@ -23,10 +23,10 @@ const Navbar = () => {
             <div className={`Navbar ${navbar ? 'active' : ''}`}>
                 <div className="container">
                     <div className="row justify-content-between align-items-center">
-                        <div className="col-2">
-                            <Link to="/" className="logo">Logo</Link>
+                        <div className="col-3">
+                            <Link to="/" className="logo"><img className='w-100' src="img/logo.svg" alt="" /></Link>
                         </div>
-                        <div className={`col-9 d-flex justify-content-evenly nav_box ${burger ? 'active' : ''}`}>
+                        <div className={`col-6 d-flex justify-content-evenly nav_box ${burger ? 'active' : ''}`}>
                             <Link to="/" className={`nav_a ${location.pathname === '/' ? 'active' : ''}`}>Home</Link>
                             <Link to="/Business" className={`nav_a ${location.pathname === '/Business' ? 'active' : ''}`}>Best deals</Link>
                             <Link to="/Offers" className={`nav_a ${location.pathname === '/Offers' ? 'active' : ''}`}>Offers</Link>

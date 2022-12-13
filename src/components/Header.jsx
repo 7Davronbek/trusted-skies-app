@@ -157,7 +157,7 @@ const Header = ({ setSearch }) => {
                                         {/* <img className='me-2' src="/img/header_cal.png" alt="" /> */}
                                         <div className="h_box_2_text">
                                             {/* <div className="h_box_2_text_h">OUTBOUND</div> */}
-                                            <input onChange={e => setDate(e.target.value)} type="date" placeholder="dd-mm-yyyy" format="yyyy-mm-dd" min="1997-01-01" max="2030-12-31" className='form-control ' name="" id="" />
+                                            <input onChange={e => setDate(e.target.value)} type="date" placeholder="dd-mm-yyyy" format="dd-mm-yyyy" min="1997-01-01" max="2030-12-31" className='form-control ' name="" id="" />
                                         </div>
                                     </div>
                                     {/* <div className="h_box_2">

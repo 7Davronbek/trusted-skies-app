@@ -448,14 +448,15 @@ body {
             backdrop-filter: blur(4px);
             border-radius: 15px;
             border: 1px solid #00203D;
+            font-size: 20px;
 
             &:focus-visible {
                 outline: none;
             }
 
             option {
-                font-size: 25px;
                 line-height: 45px;
+                font-size: 16px;
                 color: white;
                 background-color: #00203D;
             }
@@ -765,16 +766,16 @@ body {
 
         &.active {
             backdrop-filter: blur(15px);
-            background: #4541f55c;
+            background: #fff;
             border-color: #ffeef063;
             box-shadow: 0 0 10px silver;
 
-            .nav_a {
-                &.active {
-                    color: #FFFFFF;
-                    border-color: #fff;
-                }
-            }
+            // .nav_a {
+            //     &.active {
+            //         color: #FFFFFF;
+            //         border-color: #fff;
+            //     }
+            // }
         }
 
         .container {
