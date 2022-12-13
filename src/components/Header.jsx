@@ -190,8 +190,8 @@ const Header = ({ setSearch }) => {
                                         <div className={`wrap ${passanger ? 'active' : ''}`}>
                                             <div className="wrapContent mb-3">
                                                 <div className='me-2'>
-                                                    <h5>Old</h5>
-                                                    <h6>more 12 old</h6>
+                                                    <h5>Adults</h5>
+                                                    <h6>Over 12 years old</h6>
                                                 </div>
                                                 <div className="button_wrapper">
                                                     <button disabled={old <= 1} className='btn' onClick={() => setOld(old > 1 ? old - 1 : 0)}>-</button>
@@ -202,8 +202,8 @@ const Header = ({ setSearch }) => {
 
                                             <div className="wrapContent mb-3">
                                                 <div className='me-2'>
-                                                    <h5>Adult</h5>
-                                                    <h6>from 2 to 12 years</h6>
+                                                    <h5>Children</h5>
+                                                    <h6>2-12 years old</h6>
                                                 </div>
                                                 <div className="button_wrapper">
                                                     <button disabled={adult <= 0} className='btn' onClick={() => setAdult(adult > 1 ? adult - 1 : 0)}>-</button>
@@ -214,8 +214,8 @@ const Header = ({ setSearch }) => {
 
                                             <div className="wrapContent mb-3">
                                                 <div className='me-2'>
-                                                    <h5>Young</h5>
-                                                    <h6>less 2 years</h6>
+                                                    <h5>Infants</h5>
+                                                    <h6>0-2 y.o.</h6>
                                                 </div>
                                                 <div className="button_wrapper">
                                                     <button disabled={young <= 0} className='btn' onClick={() => setYoung(young > 1 ? young - 1 : 0)}>-</button>
