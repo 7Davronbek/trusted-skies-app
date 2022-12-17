@@ -68,9 +68,9 @@ const Header = ({ setSearch }) => {
     useEffect(() => {
 
         const getFrom = async () => {
-            await axios.get(API_PATH + '/airport/search/?city=' + from)
+            await axios.get(API_PATH + '/airport/search/?city=' + from.toUpperCase())
                 .then((res) => {
-                    setAllFrom(res.data)
+                    setAllFrom(res.data.results)
                 })
                 .catch((err) => {
                     console.log(err);
@@ -82,9 +82,9 @@ const Header = ({ setSearch }) => {
     useEffect(() => {
 
         const getTo = async () => {
-            await axios.get(API_PATH + '/airport/search/?city=' + to)
+            await axios.get(API_PATH + '/airport/search/?city=' + to.toUpperCase())
                 .then((res) => {
-                    setAllTo(res.data)
+                    setAllTo(res.data.results)
                 })
                 .catch((err) => {
                     console.log(err);
@@ -125,8 +125,8 @@ const Header = ({ setSearch }) => {
                                                 <input autoFocus placeholder='From' onChange={e => { setFrom(e.target.value); setFromBool(true) }} value={from} type="text" className="form-control" />
                                                 <div className="miniContent">{iata}</div>
                                                 <div className={`info ${fromBool && from.length > 0 ? 'active' : ''}`}>
-                                                    {from.length > 0 && allFrom && allFrom.map((item, index) => (
-                                                        <h6 onClick={(e, i) => { setFrom(item.name_en); setIata(item.iata); setFromBool(false); setClick(true) }} key={index}>{item.name_en}, <span>{item.parent_name_en}</span> <i>{item.iata}</i></h6>
+                                                    {from.length > 0 && allFrom && allFrom?.map((item, index) => (
+                                                        <h6 onClick={(e, i) => { setFrom(item.name); setIata(item.iata_code); setFromBool(false); setClick(true) }} key={index}>{item.name}, <span>{item.city}</span> <i>{item.iata_code}</i></h6>
                                                     ))}
                                                     {allFrom.length === 0 && <h5>Loading...</h5>}
                                                 </div>
@@ -143,8 +143,8 @@ const Header = ({ setSearch }) => {
                                                 <input placeholder='To' onChange={e => { setTo(e.target.value); setToBool(true) }} value={to} type="text" className="form-control" />
                                                 <div className="miniContent">{toIata}</div>
                                                 <div className={`info ${toBool && to.length > 0 ? 'active' : ''}`}>
-                                                    {to.length > 0 && allTo && allTo.map((item, index) => (
-                                                        <h6 onClick={(e, i) => { setTo(item.name_en); setToIata(item.iata); setToBool(false) }} key={index}>{item.name_en}, <span>{item.parent_name_en}</span> <i>{item.iata}</i></h6>
+                                                    {to.length > 0 && allTo && allTo?.map((item, index) => (
+                                                        <h6 onClick={(e, i) => { setTo(item.name); setToIata(item.iata_code); setToBool(false) }} key={index}>{item.name}, <span>{item.city}</span> <i>{item.iata_code}</i></h6>
                                                     ))}
                                                     {allTo.length === 0 && <h5>Loading...</h5>}
                                                 </div>
